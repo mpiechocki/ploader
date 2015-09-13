@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <form>
+        card: <input type="text" name="card" id="idCard"><br>
+    </form>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<title>MainStage</title>
+<!--Adobe Edge Runtime-->
+    <script type="text/javascript" charset="utf-8" src="http://animate.adobe.com/runtime/6.0.0/edge.6.0.0.min.js"></script>
+    <style>
+        .edgeLoad-EDGE-7647525 { visibility:hidden; }
+    </style>
+<script>
+   AdobeEdge.loadComposition('loader2', 'EDGE-7647525', {
+    scaleToFit: "none",
+    centerStage: "none",
+    minW: "0px",
+    maxW: "undefined",
+    width: "702px",
+    height: "761px"
+}, {"dom":{}}, {"dom":{}});
+</script>
+<!--Adobe Edge Runtime End-->
+    
+    <script>
+        
+        var comp;
+        AdobeEdge.bootstrapCallback(function(compId) {
+        comp = AdobeEdge.getComposition(compId);
+        AdobeEdge.Symbol.bindElementAction(compId, 'stage', "${Button1}", "click", function(sym,e){var loadedComp=EC.loadComposition(document.getElementById('idCard').value + ".html" ,sym.$("Content"));loadedComp.done(function(comp)
+{ loadedStage=comp.getStage();
+});
+});
+            AdobeEdge.Symbol.bindElementAction(compId,'stage',"${ButtonPlayAgain}","click",function(sym,e){loadedStage.play(0); loadedStage.$(document.getElementById('idCard').value)[0].currentTime = 0;});
+            AdobeEdge.Symbol.bindElementAction(compId,'stage',"${SetMessageButton}","click",function(sym,e){
+                //var styleAttr = loadedStage.$("ecard-message").attr("style");
+                //console.log(styleAttr);
+                loadedStage.$("ecard-message").text(document.getElementById('idMessage').value);
+                });
+            AdobeEdge.Symbol.bindElementAction(compId,'stage',"${SetMessage1Button}","click",function(sym,e){loadedStage.$("ecard-message1").text(document.getElementById('idMessage1').value);});
+            AdobeEdge.Symbol.bindElementAction(compId,'stage',"${SetMessage2Button}","click",function(sym,e){loadedStage.$("ecard-message2").text(document.getElementById('idMessage2').value);});
+            AdobeEdge.Symbol.bindElementAction(compId,'stage',"${SetMessage3Button}","click",function(sym,e){loadedStage.$("ecard-message3").text(document.getElementById('idMessage3').value);});
+            AdobeEdge.Symbol.bindElementAction(compId,'stage',"${SetMessage4Button}","click",function(sym,e){loadedStage.$("ecard-message4").text(document.getElementById('idMessage4').value);});
+            AdobeEdge.Symbol.bindElementAction(compId,'stage',"${SetNumberButton}","click",function(sym,e){loadedStage.$("ecard-number").text(document.getElementById('idNumber').value);});
+            AdobeEdge.Symbol.bindElementAction(compId,'stage',"${SetRecipientButton}","click",function(sym,e){loadedStage.$("ecard-recipient").text(document.getElementById('idRecipient').value);});
+});
+    </script>
+
+</head>
+<body style="margin:0;padding:0;">
+	<div id="Stage" class="EDGE-7647525">
+	</div>
+    <div>
+        <form>
+        ecard-message: <input type="text" name="message" id="idMessage"><br>
+        ecard-message1: <input type="text" name="message1" id="idMessage1"><br>
+        ecard-message2: <input type="text" name="message2" id="idMessage2"><br>
+        ecard-message3: <input type="text" name="message3" id="idMessage3"><br>
+        ecard-message4: <input type="text" name="message4" id="idMessage4"><br>
+        ecard-number: <input type="text" name="number" id="idNumber"><br>
+        ecard-recipient <input type="text" name="recipient" id="idRecipient"><br>
+    </form>
+    </div>
+    <br>
+</body>
+</html>
